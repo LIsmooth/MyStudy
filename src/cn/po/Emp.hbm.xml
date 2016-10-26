@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="cn.po.Emp" table="emp">
+		<id name="empno">
+			<generator class="sequence">
+				<param name="sequence">seq_id</param>
+			</generator>
+		</id>
+		<property name="empname" />
+		<!-- lazy="false"表示延迟加载关闭 -->
+		<many-to-one name="dept" class="cn.po.Dept" column="deptno" />
+	</class>
+
+</hibernate-mapping>
